@@ -4,7 +4,7 @@ import('node-fetch').then(fetch => {
   const Chart = require('chart.js/auto');
   require('dotenv').config(); // Mengimpor dan mengonfigurasi dotenv
   const app = express();
-  const PORT = process.env.PORT || 3000; // Menggunakan nilai PORT dari variabel lingkungan atau default 3000
+  const PORT = process.env.PORT || 5000; // Menggunakan nilai PORT dari variabel lingkungan atau default 3000
   
   app.use(express.static('public'));
   

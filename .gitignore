@@ -3,3 +3,6 @@ node_modules/
 
 #environment
 .env
+
+#file
+index.js
