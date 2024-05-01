@@ -2,9 +2,9 @@
 import('node-fetch').then(fetch => {
   const express = require('express');
   const Chart = require('chart.js/auto');
-  require('dotenv').config(); // Mengimpor dan mengonfigurasi dotenv
+  require('dotenv').config(); 
   const app = express();
-  const PORT = process.env.PORT || 5000; // Menggunakan nilai PORT dari variabel lingkungan atau default 3000
+  const PORT = process.env.PORT || 5000;
   
   app.use(express.static('public'));
   
@@ -19,11 +19,8 @@ import('node-fetch').then(fetch => {
               throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
           }
           let data = await response.json();
-          // Urutkan data berdasarkan timestamp secara menurun
           data.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1);
-          // Batasi jumlah data yang ditampilkan menjadi 20
-          data = data.slice(0, 20);
-          // Pilih hanya nilai yang diperlukan
+          data = data.slice(0, 30);
           data = data.map(entry => ({
               temperature: entry.temperature,
               humidity: entry.humidity,
